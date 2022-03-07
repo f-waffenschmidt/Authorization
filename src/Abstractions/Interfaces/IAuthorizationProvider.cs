@@ -3,7 +3,7 @@ using System.Security.Claims;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Florez4Code.Authorization.Core.Interfaces
+namespace Florez4Code.Authorization.Abstractions.Interfaces
 {
     public interface IAuthorizationProvider
     {

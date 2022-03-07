@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Net.Http;
 using System.Reflection;
+using Florez4Code.Authorization.Abstractions.Extensions;
 using Florez4Code.Authorization.Core.Attributes;
 using Florez4Code.Authorization.Core.Models;
 using Florez4Code.Authorization.Core.Options;
@@ -19,43 +20,6 @@ using Polly.Extensions.Http;
 
 namespace Florez4Code.Authorization.Core.Extensions
 {
-
-    /// <summary>
-    /// Class SdkBuilder.
-    /// </summary>
-    public class AuthorizationBuilder : IAuthorizationBuilder
-    {
-
-        /// <summary>
-        /// Constructor.
-        /// </summary>
-        /// <param name="services">The services being configured.</param>
-        /// <param name="configuration">The configuration.</param>
-        public AuthorizationBuilder(IServiceCollection services)
-        {
-            Services = services ?? throw new ArgumentNullException(nameof(services));
-        }
-
-        /// <summary>
-        /// The services being configured.
-        /// </summary>
-        public virtual IServiceCollection Services { get; }
-
-
-    }
-
-    public interface IAuthorizationBuilder
-    {
-
-        /// <summary>
-        /// Gets the services.
-        /// </summary>
-        /// <value>The services.</value>
-        IServiceCollection Services { get; }
-
-    }
-
-
     public static class ServiceCollectionExtensions
     {
         public static IAuthorizationBuilder AddAuthorizationServices<T>(this IServiceCollection services, Action<AuthorizationProviderOptions> configureOptions) where T : DelegatingHandler

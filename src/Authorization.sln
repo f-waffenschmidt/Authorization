@@ -12,6 +12,8 @@ ProjectSection(SolutionItems) = preProject
 	Directory.Build.props = Directory.Build.props
 EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abstractions", "Abstractions\Abstractions.csproj", "{A3727B4D-BC31-4D9C-86C8-971346F94679}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -22,12 +24,17 @@ Global
 		{36782D94-D322-4AE9-8DFC-EB01F48C7475}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{36782D94-D322-4AE9-8DFC-EB01F48C7475}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{36782D94-D322-4AE9-8DFC-EB01F48C7475}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3727B4D-BC31-4D9C-86C8-971346F94679}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3727B4D-BC31-4D9C-86C8-971346F94679}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3727B4D-BC31-4D9C-86C8-971346F94679}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3727B4D-BC31-4D9C-86C8-971346F94679}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{36782D94-D322-4AE9-8DFC-EB01F48C7475} = {1877CF74-9B34-45B3-8AB5-492119AC0258}
+		{A3727B4D-BC31-4D9C-86C8-971346F94679} = {1877CF74-9B34-45B3-8AB5-492119AC0258}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3D7A46D8-6D6D-43D3-9649-8C6012931D16}

@@ -1,6 +1,6 @@
 ﻿using System.Security.Claims;
 using System.Threading.Tasks;
-using Florez4Code.Authorization.Core.Interfaces;
+using Florez4Code.Authorization.Abstractions.Interfaces;
 using Florez4Code.Authorization.Core.Options;
 using IdentityModel;
 using Microsoft.AspNetCore.Authentication;
