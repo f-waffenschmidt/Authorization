@@ -1,15 +1,15 @@
-﻿using Florez4Code.Authorization.Abstractions.Interfaces;
-using Florez4Code.Authorization.Core.Extensions;
-using Microsoft.Extensions.DependencyInjection;
+﻿using AuthZ.Abstractions.Interfaces;
+using AuthZ.Core.Extensions;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 
-namespace Florez4Code.Authorization.Abstractions.Extensions
+namespace AuthZ.Abstractions.Extensions
 {
     public static class AuthorizationBuilderExtensions
     {
         public static IAuthorizationBuilder AddAuthorizationBuilder<T>(this IAuthorizationBuilder authorizationBuilder)
             where T : class, IAuthorizationProvider
         {
-            authorizationBuilder.Services.AddTransient<IAuthorizationProvider, T>();
+            authorizationBuilder.Services.TryAddTransient<IAuthorizationProvider, T>();
             return authorizationBuilder;
         }
     }

@@ -1,29 +1,23 @@
-﻿using System.Security.Claims;
-using System.Threading.Tasks;
-using Florez4Code.Authorization.Abstractions.Interfaces;
-using Florez4Code.Authorization.Core.Options;
-using IdentityModel;
+﻿using System.Threading.Tasks;
+using AuthZ.Abstractions.Interfaces;
+using AuthZ.Core.Options;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Authorization.Policy;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Options;
 
-namespace Florez4Code.Authorization.Core
+namespace AuthZ.Core
 {
     public class CustomPolicyEvaluator : PolicyEvaluator
     {
-        private readonly AuthorizationCache _authorizationCache;
         private readonly IAuthorizationProvider _authorizationProvider;
-        private readonly IOptions<AuthorizationProviderOptions> _options;
 
-        public CustomPolicyEvaluator(IAuthorizationService authorization, AuthorizationCache authorizationCache,
+        public CustomPolicyEvaluator(IAuthorizationService authorization,
             IAuthorizationProvider authorizationProvider, IOptions<AuthorizationProviderOptions> options) :
             base(authorization)
         {
-            _authorizationCache = authorizationCache;
             _authorizationProvider = authorizationProvider;
-            _options = options;
         }
 
         /// <inheritdoc />
@@ -34,10 +28,7 @@ namespace Florez4Code.Authorization.Core
             if (!authenticationResult.Succeeded)
                 return await base.AuthorizeAsync(policy, authenticationResult, context, resource);
             var principal = authenticationResult.Principal;
-            var key = principal.FindFirstValue(JwtClaimTypes.Subject) ??
-                      principal.FindFirstValue(JwtClaimTypes.ClientId);
-
-            var claimsIdentity = await _authorizationProvider.InvokeAuthorizationsAsync(principal, default);
+            var claimsIdentity = await _authorizationProvider.InvokeAuthorizationsAsync(principal, context.RequestAborted);
             context.User.AddIdentity(claimsIdentity);
 
             return await base.AuthorizeAsync(policy, authenticationResult, context, resource);

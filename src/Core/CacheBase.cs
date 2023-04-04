@@ -2,13 +2,13 @@
 using System.Threading.Tasks;
 using Microsoft.Extensions.Caching.Memory;
 
-namespace Florez4Code.Authorization.Core
+namespace AuthZ.Core
 {
-    public class ApplicationCache<T> where T : class
+    public class CacheBase<T> where T : class
     {
         private readonly IMemoryCache _cache;
 
-        public ApplicationCache(IMemoryCache cache)
+        public CacheBase(IMemoryCache cache)
         {
             _cache = cache;
         }

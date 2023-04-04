@@ -2,7 +2,7 @@
 using IdentityModel;
 using IdentityModel.Client;
 
-namespace Florez4Code.Authorization.Core.Models
+namespace AuthZ.Core.Models
 {
     public class PrincipalAuthorizationResponse : ProtocolResponse
     {
@@ -47,15 +47,8 @@ namespace Florez4Code.Authorization.Core.Models
             {
                 var value = TryGet(OidcConstants.TokenResponse.ExpiresIn);
 
-                if (value != null)
-                {
-                    if (int.TryParse(value, out var theValue))
-                    {
-                        return theValue;
-                    }
-                }
-
-                return 0;
+                if (value == null) return 0;
+                return int.TryParse(value, out var theValue) ? theValue : 0;
             }
         }
     }

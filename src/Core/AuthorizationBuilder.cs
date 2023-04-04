@@ -1,10 +1,10 @@
 ﻿using System;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Florez4Code.Authorization.Core.Extensions
+namespace AuthZ.Core.Extensions
 {
     /// <summary>
-    /// Class SdkBuilder.
+    /// AuthorizationBuilder class to add services.
     /// </summary>
     public class AuthorizationBuilder : IAuthorizationBuilder
     {

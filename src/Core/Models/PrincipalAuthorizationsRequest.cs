@@ -2,7 +2,7 @@
 using System.Net.Http;
 using System.Net.Http.Headers;
 
-namespace Florez4Code.Authorization.Core.Models
+namespace AuthZ.Core.Models
 {
     /// <summary>
     /// Principal Authorization Request

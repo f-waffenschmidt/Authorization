@@ -1,4 +1,4 @@
-﻿namespace Florez4Code.Authorization.Core.Options
+﻿namespace AuthZ.Core.Options
 {
     public class AuthorizationProviderOptions
     {
@@ -9,6 +9,6 @@
         /// <summary>
         /// Cache options
         /// </summary>
-        public CacheOptions Cache { get; set; } = new CacheOptions();
+        public CacheOptions Cache { get; set; } = new();
     }
 }

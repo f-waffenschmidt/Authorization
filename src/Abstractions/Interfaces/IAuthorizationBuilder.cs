@@ -1,7 +1,7 @@
 ﻿
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Florez4Code.Authorization.Core.Extensions
+namespace AuthZ.Core.Extensions
 {
     public interface IAuthorizationBuilder
     {

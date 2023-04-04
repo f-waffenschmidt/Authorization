@@ -1,8 +1,10 @@
-﻿namespace Florez4Code.Authorization.Core.Options
+﻿using AuthZ.Core.Models;
+
+namespace AuthZ.Core.Options
 {
     public class CacheOptions
     {
         public bool Enabled { get; set; } = true;
-        public int ExpiresIn { get; set; } = 1800;
+        public int ExpiresIn { get; set; } = AuthorizationConstants.General.DefaultCacheLifetime;
     }
 }

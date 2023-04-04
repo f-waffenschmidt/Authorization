@@ -2,10 +2,10 @@
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
-using Florez4Code.Authorization.Core.Models;
+using AuthZ.Core.Models;
 using IdentityModel.Client;
 
-namespace Florez4Code.Authorization.Core.Extensions
+namespace AuthZ.Core.Extensions
 {
     public static class HttpClientExtensions
     {
@@ -13,7 +13,6 @@ namespace Florez4Code.Authorization.Core.Extensions
         {
             request.Prepare();
             request.Method = HttpMethod.Post;
-
             HttpResponseMessage response;
             try
             {

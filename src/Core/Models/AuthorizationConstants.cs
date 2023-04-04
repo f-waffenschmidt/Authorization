@@ -1,4 +1,4 @@
-﻿namespace Florez4Code.Authorization.Core.Models
+﻿namespace AuthZ.Core.Models
 {
     public static class AuthorizationConstants
     {
@@ -25,6 +25,7 @@
         public class General
         {
             public const string Authorization = "Authorization";
+            public const int DefaultCacheLifetime = 1800;
         }
     }
 }

@@ -1,9 +1,9 @@
 ﻿using System.Security.Claims;
 using Microsoft.Extensions.Caching.Memory;
 
-namespace Florez4Code.Authorization.Core
+namespace AuthZ.Core
 {
-    public class AuthorizationCache : ApplicationCache<ClaimsIdentity>
+    public class AuthorizationCache : CacheBase<ClaimsIdentity>
     {
         public AuthorizationCache(IMemoryCache cache) : base(cache)
         {
@@ -11,7 +11,7 @@ namespace Florez4Code.Authorization.Core
 
         protected override string GetKey(string key)
         {
-            return "Authz" + KeySeparator + key;
+            return "AuthZ" + KeySeparator + key;
         }
 
     }

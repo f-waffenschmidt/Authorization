@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Newtonsoft.Json;
 
-namespace Florez4Code.Authorization.Core.Models
+namespace AuthZ.Core.Models
 {
     public class PrincipalAuthorizations
     {
