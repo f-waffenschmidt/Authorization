@@ -1,19 +1,19 @@
 ﻿using System;
+using AuthZ.Core.Extensions;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace AuthZ.Core.Extensions
+namespace AuthZ.Core
 {
     /// <summary>
     /// AuthorizationBuilder class to add services.
     /// </summary>
-    public class AuthorizationBuilder : IAuthorizationBuilder
+    public sealed class AuthorizationBuilder : IAuthorizationBuilder
     {
 
         /// <summary>
         /// Constructor.
         /// </summary>
         /// <param name="services">The services being configured.</param>
-        /// <param name="configuration">The configuration.</param>
         public AuthorizationBuilder(IServiceCollection services)
         {
             Services = services ?? throw new ArgumentNullException(nameof(services));
@@ -22,7 +22,7 @@ namespace AuthZ.Core.Extensions
         /// <summary>
         /// The services being configured.
         /// </summary>
-        public virtual IServiceCollection Services { get; }
+        public IServiceCollection Services { get; }
 
 
     }

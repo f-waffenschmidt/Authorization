@@ -3,10 +3,13 @@
     <PropertyGroup>
         <RootNamespace>Florez4Code.Authorization.Abstractions</RootNamespace>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-        <AssemblyName>Florez4Code.Authorization.Abstractions</AssemblyName>
+        <AssemblyName>AuthZ.Abstractions</AssemblyName>
         <Nullable>enable</Nullable>
     </PropertyGroup>
-    <ItemGroup>
-        <PackageReference Include="Microsoft.AspNetCore.App" />
+    <ItemGroup Condition="'$(TargetFramework)' == 'net6'">
+      <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0" />
+    </ItemGroup>
+    <ItemGroup Condition="'$(TargetFramework)' == 'net7'">
+        <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="7.0.0" />
     </ItemGroup>
 </Project>
